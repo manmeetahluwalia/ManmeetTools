@@ -15,6 +15,7 @@
     --masala:#2D5F4D; --masala-deep:#1B3D31; --masala-pale:#E1EDE6;
     --turmeric:#E8B04B; --turmeric-deep:#B9842E; --turmeric-pale:#FBF0CC;
     --ok:#5BD39A; --warn:#E8B04B; --bad:#F0623A;
+    --nt-navy:#13132B; --nt-navy-deep:#0A0A1A; --nt-gold:#F2C14E;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{margin:0;padding:0;}
@@ -238,6 +239,59 @@
   .toast.show{ opacity:1;transform:translateX(-50%) translateY(0); }
   @keyframes fadein{ from{opacity:0;transform:translateY(6px);} to{opacity:1;transform:translateY(0);} }
 
+  /* ===== AGE NOTE ===== */
+  .age-note{ margin-top:9px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;line-height:1.5;color:var(--ink-soft);background:var(--turmeric-pale);border-left:4px solid var(--turmeric-deep);padding:8px 11px;border-radius:0 7px 7px 0; }
+  .age-note b{ color:var(--terracotta-deep); }
+  .fuel-nt{ margin:4px 0 8px;font-size:12px;color:var(--ink-soft); }
+  .fuel-nt b{ color:var(--terracotta-deep); }
+
+  /* ===== ACCOUNTABILITY + NATURALTEIN ===== */
+  .ac-intro{ font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 13px; }
+  .ac-row{ margin-bottom:11px; }
+  .ac-lbl{ font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px;color:var(--ink); }
+  .ac-days{ display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px; }
+  .ac-day{ height:40px;border:2px solid var(--ink);border-radius:9px;background:var(--cream);color:#9a8f80;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:800;padding:0;transition:background .15s,transform .1s; }
+  .ac-day:active{ transform:scale(.94); }
+  .ac-day.on{ color:#fff;font-size:17px; }
+  .ac-day.w.on{ background:var(--masala);border-color:var(--masala-deep); }
+  .ac-day.p.on{ background:var(--terracotta);border-color:var(--terracotta-deep); }
+  .ac-foot{ display:flex;justify-content:space-between;align-items:center;margin:4px 0 16px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:800;color:var(--masala-deep); }
+  .ac-reset{ background:none;border:none;color:#9a8f80;font-size:11px;text-decoration:underline;padding:6px 0 6px 10px; }
+  .natural-promo{ background:linear-gradient(160deg,var(--nt-navy) 0%,var(--nt-navy-deep) 100%);border-radius:12px;border:1.5px solid rgba(242,193,78,.4);overflow:hidden;position:relative; }
+  .natural-promo::before{ content:'';position:absolute;top:-40%;right:-20%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(242,193,78,.12) 0%,transparent 70%);pointer-events:none; }
+  .np-top{ display:flex;align-items:center;justify-content:space-between;padding:15px 15px 0;position:relative;z-index:1; }
+  .nt-logo{ display:flex;align-items:center;gap:7px; }
+  .nt-logo-mark{ width:26px;height:26px;border-radius:6px;background:var(--nt-gold);display:flex;align-items:center;justify-content:center; }
+  .nt-logo-mark svg{ width:16px;height:16px; }
+  .nt-logo-text{ font-family:'Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:13px;color:#fff;letter-spacing:.3px; }
+  .nt-logo-text .sub{ display:block;font-size:6.8px;color:#8a8aa8;font-weight:700;letter-spacing:1.3px;margin-top:-1px; }
+  .np-badge{ background:var(--nt-gold);color:var(--nt-navy-deep);font-family:'Helvetica Neue',Arial,sans-serif;font-size:8.5px;font-weight:900;padding:4px 9px;border-radius:10px;letter-spacing:.5px; }
+  .np-body{ padding:12px 15px 15px;position:relative;z-index:1; }
+  .np-text{ color:#c9c9e0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;line-height:1.55;margin:0 0 12px; }
+  .np-text b{ color:var(--nt-gold); }
+  .np-coupon{ display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.35);border-radius:8px;padding:11px 14px;border:1.5px dashed var(--nt-gold);margin-bottom:11px; }
+  .np-coupon-label{ color:#8a8aa8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:9.5px;display:block; }
+  .np-coupon-code{ color:var(--nt-gold);font-family:'Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:17px;letter-spacing:1.5px;display:block; }
+  .np-coupon-save{ background:var(--nt-gold);color:var(--nt-navy-deep);font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:900;padding:6px 12px;border-radius:20px; }
+  .np-cta{ display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--nt-gold);color:var(--nt-navy-deep);padding:13px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:13px;text-decoration:none; }
+
+  /* ===== HORIZON TOGGLE ===== */
+  .hz{ display:flex;gap:6px;margin-top:13px; }
+  .hz button{ flex:1;border:2px solid var(--terracotta);background:#fff;color:var(--terracotta-deep);font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:11.5px;line-height:1.2;padding:9px 4px;border-radius:22px;transition:all .15s; }
+  .hz button.on{ background:var(--terracotta);color:#fff; }
+  .hz-note{ margin-top:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:#8a6a5a;line-height:1.4; }
+
+  /* ===== NATURALTEIN STRIP ===== */
+  .nt-strip{ display:flex;align-items:center;gap:10px;background:linear-gradient(160deg,var(--nt-navy) 0%,var(--nt-navy-deep) 100%);border:1.5px solid rgba(242,193,78,.45);border-radius:12px;padding:12px;margin-bottom:18px;font-family:'Helvetica Neue',Arial,sans-serif;box-shadow:4px 4px 0 var(--ink); }
+  .nts-mark{ width:30px;height:30px;border-radius:7px;background:var(--nt-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+  .nts-mark svg{ width:18px;height:18px; }
+  .nts-t{ flex:1;min-width:0;color:#b9b9d6;font-size:10.5px;line-height:1.35; }
+  .nts-t b{ display:block;font-size:12.5px;font-weight:900;color:#fff;margin-bottom:1px; }
+  .nts-actions{ display:flex;flex-direction:column;gap:5px;flex-shrink:0; }
+  .nts-code{ background:rgba(0,0,0,.35);border:1.5px dashed var(--nt-gold);color:var(--nt-gold);font-family:inherit;font-weight:900;font-size:12px;letter-spacing:1px;padding:6px 9px;border-radius:8px; }
+  .nts-code small{ font-size:8px;letter-spacing:.4px;color:#b9b9d6;font-weight:700; }
+  .nts-go{ background:var(--nt-gold);color:var(--nt-navy-deep);font-weight:900;font-size:11px;text-align:center;text-decoration:none;padding:6px 9px;border-radius:8px; }
+
   @media (max-width:370px){
     h1{ font-size:31px; }
     .stage.single{ grid-template-columns:1fr 128px 1fr; }
@@ -279,6 +333,7 @@
     <div class="field">
       <div class="lbl"><span data-i="age_lbl"></span></div>
       <input type="number" id="age" value="30" min="18" max="60" inputmode="numeric" aria-label="Age">
+      <div class="age-note" id="age-note" aria-live="polite"></div>
     </div>
     <div class="field">
       <div class="lbl"><span data-i="hrs_lbl"></span><span class="val"><span id="hrs-val">9</span>h</span></div>
@@ -286,9 +341,15 @@
       <input type="range" class="rng light" id="hrs" min="4" max="14" step="1" value="9" aria-label="Sitting hours per day">
     </div>
     <div class="math" aria-live="polite">
-      <div class="math-top" data-i="m_top"></div>
+      <div class="math-top" id="m-top"></div>
       <div class="math-big"><span id="m-hours">0</span><small data-i="m_unit"></small></div>
       <div class="math-eq" id="m-eq"></div>
+      <div class="hz" role="group" aria-label="Time horizon">
+        <button id="hz-sofar" onclick="setHz('sofar')" data-i="hz_sofar"></button>
+        <button id="hz-ten" onclick="setHz('ten')" data-i="hz_ten"></button>
+        <button id="hz-career" onclick="setHz('career')" data-i="hz_career"></button>
+      </div>
+      <div class="hz-note" data-i="hz_note"></div>
     </div>
   </div>
 
@@ -318,6 +379,16 @@
     <p class="cmp-note" data-i="cmp_note"></p>
   </div>
 
+  <!-- ============ NATURALTEIN STRIP ============ -->
+  <div class="nt-strip">
+    <div class="nts-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L21 20H3L12 2Z" stroke="#13132B" stroke-width="2" stroke-linejoin="round"/><path d="M12 9L16.5 18H7.5L12 9Z" fill="#13132B"/></svg></div>
+    <div class="nts-t"><b data-i="nts_h"></b><span data-i="nts_s"></span></div>
+    <div class="nts-actions">
+      <button class="nts-code" onclick="copyCode()" aria-label="Copy code MSA15">MSA15 <small data-i="nts_copy"></small></button>
+      <a class="nts-go" href="https://naturaltein.in" target="_blank" rel="noopener" data-i="nts_go"></a>
+    </div>
+  </div>
+
   <!-- ============ INDIA ============ -->
   <div class="card" id="india-card">
     <div class="card-title" data-i="ind_title"></div>
@@ -328,6 +399,31 @@
   <div class="card" id="fix-card">
     <div class="card-title" data-i="fix_title"></div>
     <div id="steps"></div>
+  </div>
+
+  <!-- ============ STEP 5: ACCOUNTABILITY ============ -->
+  <div class="card" id="acct-card">
+    <div class="card-title" data-i="ac_title"></div>
+    <p class="ac-intro" data-i="ac_intro"></p>
+    <div id="acct"></div>
+    <div class="ac-foot" id="ac-count"></div>
+    <div class="natural-promo">
+      <div class="np-top">
+        <div class="nt-logo">
+          <div class="nt-logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L21 20H3L12 2Z" stroke="#13132B" stroke-width="2" stroke-linejoin="round"/><path d="M12 9L16.5 18H7.5L12 9Z" fill="#13132B"/></svg></div>
+          <div class="nt-logo-text">NATURALTEIN<span class="sub">TRUE · TRUSTED · TESTED</span></div>
+        </div>
+        <span class="np-badge" data-i="nt_badge"></span>
+      </div>
+      <div class="np-body">
+        <p class="np-text" data-i="nt_text"></p>
+        <div class="np-coupon" onclick="copyCode()" role="button" tabindex="0" style="cursor:pointer" aria-label="Copy code MSA15">
+          <div><span class="np-coupon-label" data-i="nt_code_l"></span><span class="np-coupon-code">MSA15</span></div>
+          <span class="np-coupon-save" data-i="nt_save"></span>
+        </div>
+        <a class="np-cta" href="https://naturaltein.in" target="_blank" rel="noopener" data-i="nt_cta"></a>
+      </div>
+    </div>
   </div>
 
   <!-- ============ REPORT ============ -->
@@ -408,7 +504,7 @@ hi:{
   yr_big:'SAAL {n}', yr_age:'Umar {a}',
   play:'▶ 10 saal fast-forward', pause:'⏸ Ruk ja', replay:'↺ Dobara chala',
   hud_age:'Umar', hud_sit:'Baitha', hud_mus:'Muscle', hud_car:'Cardio',
-  hud_hrs:'{n} ghante', notyet:'abhi nahi',
+  hud_hrs:'{n} ghante', notyet:'30 ke baad',
   mus_loss:'−{lo} se −{hi}%', mus_keep:'Bacha rehta*', car_loss:'−{x}%', car_keep:'−{x}% · ooncha base*',
   cap_desk:'🪑 SIRF DESK', cap_active:'🏋️ DESK + TRAINING',
   note_fig:'Figure illustrative hai (dikhne ke liye exaggerated). Numbers = published research ke averages. *Consistent training maan ke.',
@@ -422,7 +518,8 @@ hi:{
   cmp_dh:'🪑 Sirf Desk', cmp_ah:'🏋️ Desk + Training',
   r_mus:'Muscle', r_car:'Cardio', r_sit:'Sitting risk', r_dia:'Diabetes', r_back:'Back / Neck',
   c_mus_a:'Consistent lifting se muscle <b>zyada tar bacha rehta hai*</b>',
-  c_car_a:'Aging sabko hoti hai — par training se tu <b>ooncha base</b> se girta hai*',
+  c_car_a:'Aging sabko hoti hai — par training se decline kaafi slow: <b>≈ −{x}%*</b>, aur tu ooncha base se girta hai',
+  c_car_a0:'Aging sabko hoti hai — par training se tu <b>ooncha base</b> se girta hai*',
   c_sit_d:'8h+ sitting + lagbhag zero activity: <b>+{n}%</b> all-cause mortality risk (relative)¹',
   c_sit_a:'60–75 min/din moderate activity ⇒ extra sitting-risk <b>data mein khatam</b>¹',
   c_dia_d:'Zyada sitting ⇒ <b>+{n}%</b> type 2 diabetes risk (pooled)',
@@ -444,7 +541,7 @@ hi:{
   tool1:'Apna Number Nikaalo →', tool2:'Apna Diet Check Karo →',
   commit:'Main karunga ✓', committed:'Plan mein hai ✓', plan_toast:'Plan mein add ho gaya 💪',
   rp_title:'MERA DESK JOB REPORT', rp_sub:'Umar {a} → {b} · roz {h}h baithna',
-  rp_big:'10 saal = <em>{yrs} saal</em> non-stop baithna', rp_hrs:'{hrs} ghante · jaage hue time ka {pct}%',
+  rp_big:'{lbl} = <em>{yrs} saal</em> non-stop baithna', rp_hrs:'{hrs} ghante · jaage hue time ka {pct}%',
   rp_d:'🪑 Sirf desk', rp_a:'🏋️ Desk + training',
   rp_mus:'Muscle', rp_car:'Cardio', rp_t2d:'Zyada sitting ↔ T2D risk +{n}% (pooled)',
   rp_a_mus:'Muscle: zyada tar bacha*', rp_a_car:'Cardio: ooncha base*', rp_a_sit:'Sitting-risk: 60–75 min/din se neutral¹',
@@ -460,7 +557,25 @@ hi:{
   t_prep:'⏳ Image taiyaar ho rahi hai...', t_dl:'✅ Image download ho gayi — Downloads mein dekho', t_shared:'✅ Share ho gaya!',
   t_copied:'📋 Copy ho gaya! Paste karke share karo.', t_fail:'⚠️ Kuch gadbad hui, phir try karo', t_nolib:'⚠️ Image tool load nahi hua — internet check karo',
   modal_ins:'👇 Image ko 2 second dabake rakho, phir "Save Image" dabao', modal_close:'Band karo', copy_prompt:'Ye text copy karo:',
-  share_text:'Mera desk job report: 10 saal = {yrs} saal non-stop baithna 😳 — @_manmeet.ahluwalia_ ka free tool, tu bhi check kar 👇'
+  an_txt:'Umar <b>{a} → {b}</b> (sirf desk): agle 10 saal mein muscle <b>−{lo} se −{hi}%</b>, cardio <b>≈ −{vo}%</b>. Umar badhne ke saath ye rate tez hota hai.',
+  an_part:' Decline ~30 ke baad shuru hota hai, isliye in 10 saalon mein se sirf <b>{y}</b> saal count hue.',
+  an_none:'Umar <b>{a} → {b}</b>: research mein age-related decline ~30 ke baad shuru hota hai, isliye abhi numbers "30 ke baad" dikhenge. Habit abhi banana sabse aasan hai.',
+  st_fuel_nt:'Number khaane se hit nahi ho raha? Ek scoop <b>Naturaltein</b> (code <b>MSA15</b>) kaam aasan kar deta hai.',
+  ac_title:'STEP 5 · ACCOUNTABILITY: WORKOUT + PROTEIN',
+  ac_intro:'Sirf padhna kaafi nahi — apna 7-din ka scorecard bhar. Roz do sawaal: workout kiya? protein number hit kiya? Apne aap se honest reh.',
+  ac_workout:'Workout', ac_protein:'Protein', ac_count:'{n}/14 ho gaye ✓', ac_done:'🔥 14/14 — poora hafta accountable raha!', ac_reset:'Reset karo',
+  nt_badge:'MANMEET KA PICK',
+  nt_text:'Baithna roz ka choice hai — toh uska jawab bhi roz ka hona chahiye. Workout aadha kaam hai; baaki aadha <b>protein</b> — muscle protein se hi banta hai. Agar sirf khaane se roz ka number hit nahi hota, toh <b>Naturaltein</b> ka ek scoop kaam aasan kar deta hai. Main khud use karta hoon.',
+  nt_code_l:'MERA CODE USE KARO', nt_save:'15% OFF', nt_cta:'🛍️ NATURALTEIN PE JAO — MSA15 LAGAO',
+  rp_fuel:'🍗 Protein partner: <b>Naturaltein</b> · code <b>MSA15</b>', rp_acct:'Accountability: <b>{n}/14</b> ✓',
+  hz_sofar:'Ab tak', hz_ten:'Agle 10 saal', hz_career:'60 tak',
+  m_top_sofar:'22 ki umar se ab tak tu baitha', m_top_ten:'10 saal mein tu baithega', m_top_career:'60 ki umar tak tu baithega',
+  hz_note:'Maana hai: career 22 se shuru, retirement 60 pe, roz utne hi ghante.',
+  hz_zero:'Teri umar ke liye ye option 0 hai — dusra option chun.',
+  lbl_sofar:'Ab tak', lbl_ten:'10 saal', lbl_career:'60 tak',
+  nts_h:'Desk job ka jawab: workout + protein', nts_s:'Protein gap hai? Naturaltein — mera code:', nts_copy:'· COPY', nts_go:'SHOP →',
+  code_copied:'📋 MSA15 copy ho gaya — Naturaltein pe lagao',
+  share_text:'Mera desk job report: {lbl} = {yrs} saal non-stop baithna 😳 — @_manmeet.ahluwalia_ ka free tool, tu bhi check kar 👇'
 },
 en:{
   eyebrow:'FREE TOOL · NO LOGIN · BY MANMEET',
@@ -475,7 +590,7 @@ en:{
   yr_big:'YEAR {n}', yr_age:'Age {a}',
   play:'▶ Fast-forward 10 years', pause:'⏸ Pause', replay:'↺ Replay',
   hud_age:'Age', hud_sit:'Sat', hud_mus:'Muscle', hud_car:'Cardio',
-  hud_hrs:'{n} hrs', notyet:'not yet',
+  hud_hrs:'{n} hrs', notyet:'starts at 30',
   mus_loss:'−{lo} to −{hi}%', mus_keep:'Preserved*', car_loss:'−{x}%', car_keep:'−{x}% · higher base*',
   cap_desk:'🪑 DESK ONLY', cap_active:'🏋️ DESK + TRAINING',
   note_fig:'Figure is illustrative (exaggerated for visibility). Numbers = published research averages. *Assuming consistent training.',
@@ -489,7 +604,8 @@ en:{
   cmp_dh:'🪑 Desk Only', cmp_ah:'🏋️ Desk + Training',
   r_mus:'Muscle', r_car:'Cardio', r_sit:'Sitting risk', r_dia:'Diabetes', r_back:'Back / Neck',
   c_mus_a:'With consistent lifting, muscle is <b>largely preserved*</b>',
-  c_car_a:'Everyone ages — but training means you decline from a <b>higher base</b>*',
+  c_car_a:'Everyone ages — but with training the decline is much slower: <b>≈ −{x}%*</b>, from a higher base',
+  c_car_a0:'Everyone ages — but training means you decline from a <b>higher base</b>*',
   c_sit_d:'8h+ sitting + almost no activity: <b>+{n}%</b> all-cause mortality risk (relative)¹',
   c_sit_a:'60–75 min/day moderate activity ⇒ the extra sitting risk <b>disappears in the data</b>¹',
   c_dia_d:'More sitting ⇒ <b>+{n}%</b> type 2 diabetes risk (pooled)',
@@ -511,7 +627,7 @@ en:{
   tool1:'Apna Number Nikaalo →', tool2:'Apna Diet Check Karo →',
   commit:'I will do this ✓', committed:'In my plan ✓', plan_toast:'Added to your plan 💪',
   rp_title:'MY DESK JOB REPORT', rp_sub:'Age {a} → {b} · sitting {h}h a day',
-  rp_big:'10 years = <em>{yrs} years</em> of non-stop sitting', rp_hrs:'{hrs} hours · {pct}% of waking time',
+  rp_big:'{lbl} = <em>{yrs} years</em> of non-stop sitting', rp_hrs:'{hrs} hours · {pct}% of waking time',
   rp_d:'🪑 Desk only', rp_a:'🏋️ Desk + training',
   rp_mus:'Muscle', rp_car:'Cardio', rp_t2d:'More sitting ↔ T2D risk +{n}% (pooled)',
   rp_a_mus:'Muscle: largely preserved*', rp_a_car:'Cardio: higher base*', rp_a_sit:'Sitting risk: neutral at 60–75 min/day¹',
@@ -527,7 +643,25 @@ en:{
   t_prep:'⏳ Preparing your image...', t_dl:'✅ Image downloaded — check your Downloads', t_shared:'✅ Shared!',
   t_copied:'📋 Copied! Paste and share.', t_fail:'⚠️ Something went wrong, try again', t_nolib:'⚠️ Image tool failed to load — check your internet',
   modal_ins:'👇 Press and hold the image, then tap "Save Image"', modal_close:'Close', copy_prompt:'Copy this text:',
-  share_text:'My desk job report: 10 years = {yrs} years of non-stop sitting 😳 — free tool by @_manmeet.ahluwalia_, check yours 👇'
+  an_txt:'Age <b>{a} → {b}</b> (desk only): muscle <b>−{lo} to −{hi}%</b> and cardio <b>≈ −{vo}%</b> over the next 10 years. The rate speeds up as you get older.',
+  an_part:' The decline only starts around 30, so just <b>{y}</b> of these 10 years count.',
+  an_none:'Age <b>{a} → {b}</b>: the research puts the start of age-related decline at ~30, so the numbers read "starts at 30" for now. Habits are easiest to build early.',
+  st_fuel_nt:'Not hitting your number from food? A scoop of <b>Naturaltein</b> (code <b>MSA15</b>) makes it easier.',
+  ac_title:'STEP 5 · ACCOUNTABILITY: WORKOUT + PROTEIN',
+  ac_intro:"Reading isn't enough — fill in your own 7-day scorecard. Two questions a day: did you work out? did you hit your protein number? Stay honest with yourself.",
+  ac_workout:'Workout', ac_protein:'Protein', ac_count:'{n}/14 done ✓', ac_done:'🔥 14/14 — a fully accountable week!', ac_reset:'Reset',
+  nt_badge:"MANMEET'S PICK",
+  nt_text:'Sitting is a daily choice — so your answer to it should be daily too. Workout is half the job; the other half is <b>protein</b> — muscle is built from it. If hitting your daily number from food alone is a struggle, a scoop of <b>Naturaltein</b> makes it easier. I use it myself.',
+  nt_code_l:'USE MY CODE', nt_save:'SAVE 15%', nt_cta:'🛍️ SHOP NATURALTEIN — APPLY MSA15',
+  rp_fuel:'🍗 Protein partner: <b>Naturaltein</b> · code <b>MSA15</b>', rp_acct:'Accountability: <b>{n}/14</b> ✓',
+  hz_sofar:'So far', hz_ten:'Next 10 yrs', hz_career:'Till 60',
+  m_top_sofar:'Since age 22 you have sat', m_top_ten:'In 10 years you will sit', m_top_career:'By age 60 you will have sat',
+  hz_note:'Assumes career from 22, retirement at 60, same hours every day.',
+  hz_zero:'This option is 0 for your age — pick another.',
+  lbl_sofar:'So far', lbl_ten:'10 years', lbl_career:'Till 60',
+  nts_h:'The answer to a desk job: workout + protein', nts_s:'Protein gap? Naturaltein — my code:', nts_copy:'· COPY', nts_go:'SHOP →',
+  code_copied:'📋 MSA15 copied — apply it at Naturaltein',
+  share_text:'My desk job report: {lbl} = {yrs} years of non-stop sitting 😳 — free tool by @_manmeet.ahluwalia_, check yours 👇'
 }};
 
 /* ---------- hotspot research cards ---------- */
@@ -535,20 +669,24 @@ const HS = {
  muscle:{ ico:'💪', ev:'strong',
   hi:{ title:'Muscles — Chupke Se Ghatte Hain', stat:'3–8%', lbl:'muscle mass har decade, 30 ke baad (untrained logon mein)',
        lines:['Sarcopenia 30 ke baad shuru ho jaata hai — aur inactivity iske sabse bade modifiable drivers mein se ek hai.',
-              'Muscle sirf dikhne ke liye nahi: sugar control, bone support aur girne se bachne mein kaam aata hai.'],
+              'Muscle sirf dikhne ke liye nahi: sugar control, bone support aur girne se bachne mein kaam aata hai.',
+              'Rate umar ke saath tez hota hai: ≈3–5% per decade (30s–40s) → ≈5–8% (50s) → ≈8–12% (60s) — isiliye upar ke numbers tere age ke hisaab se badalte hain.'],
        fix:'Haftey mein 2+ din strength training (WHO) — saare major muscle groups.', src:'NIH PMC sarcopenia review · WHO 2020' },
   en:{ title:'Muscles — The Silent Loss', stat:'3–8%', lbl:'of muscle mass per decade after 30 (in untrained adults)',
        lines:['Sarcopenia starts after 30 — and inactivity is one of its biggest modifiable drivers.',
-              'Muscle is not just for looks: it supports blood-sugar control, bone loading and fall prevention.'],
+              'Muscle is not just for looks: it supports blood-sugar control, bone loading and fall prevention.',
+              'The rate speeds up with age: ≈3–5% per decade (30s–40s) → ≈5–8% (50s) → ≈8–12% (60s) — which is why the numbers above change with your age.'],
        fix:'Strength training 2+ days a week (WHO) — all major muscle groups.', src:'NIH PMC sarcopenia review · WHO 2020' } },
  heart:{ ico:'❤️', ev:'strong',
   hi:{ title:'Heart Aur Lungs — Engine Ka Size', stat:'~10%', lbl:'VO₂max (cardio engine) har decade girta hai — sedentary adults mein, ~30 ke baad',
        lines:['VO₂max ko longevity ke sabse strong predictors mein gina jaata hai.',
-              'Zyada sitting wale groups mein heart disease ka risk bhi zyada: CVD mortality +'+R.cvdMort+'%, CVD incidence +'+R.cvdInc+'% (sabse zyada vs sabse kam sitting, pooled).'],
+              'Zyada sitting wale groups mein heart disease ka risk bhi zyada: CVD mortality +'+R.cvdMort+'%, CVD incidence +'+R.cvdInc+'% (sabse zyada vs sabse kam sitting, pooled).',
+              'Jo log consistent training karte hain unme ye decline lagbhag aadha (~5–6.5% per decade) dikhta hai (masters-athlete studies).'],
        fix:'Haftey mein 150–300 min moderate cardio (WHO) — tez chalna bhi count hota hai.', src:'Biswas et al., Ann Intern Med 2015 · VO₂max aging reviews' },
   en:{ title:'Heart And Lungs — Your Engine Size', stat:'~10%', lbl:'VO₂max (cardio engine) drop per decade in sedentary adults, after ~30',
        lines:['VO₂max is counted among the strongest predictors of longevity.',
-              'Highest-sitting groups show more heart disease: CVD mortality +'+R.cvdMort+'%, CVD incidence +'+R.cvdInc+'% (highest vs lowest sitting, pooled).'],
+              'Highest-sitting groups show more heart disease: CVD mortality +'+R.cvdMort+'%, CVD incidence +'+R.cvdInc+'% (highest vs lowest sitting, pooled).',
+              'In people who keep training, the decline is roughly half that (~5–6.5% per decade) in masters-athlete studies.'],
        fix:'150–300 min/week of moderate cardio (WHO) — brisk walking counts.', src:'Biswas et al., Ann Intern Med 2015 · VO₂max aging reviews' } },
  sugar:{ ico:'🍬', ev:'strong',
   hi:{ title:'Sugar Aur Belly — Metabolism', stat:'+'+R.t2d+'%', lbl:'type 2 diabetes ka relative risk — sabse zyada vs sabse kam baithne wale groups (pooled meta-analysis)',
@@ -580,8 +718,8 @@ const HS = {
 };
 
 const SOURCES = [
- 'Muscle: ~3–8% per decade after age 30 — "Muscle tissue changes with aging", NIH PMC review (and related sarcopenia reviews).',
- 'VO₂max: ~10% per decade decline in sedentary adults — exercise-physiology reviews incl. Pimentel et al., J Appl Physiol 2003 and Tanaka & Seals; training mainly raises the level you decline from.',
+ 'Muscle: ~3–8% per decade after age 30 — "Muscle tissue changes with aging", NIH PMC review. The rate accelerates with age, so this tool uses approximate decade-band ranges (≈3–5% in the 30s–40s, ≈5–8% in the 50s, ≈8–12% in the 60s, ≈10–15% in the 70s) synthesised from sarcopenia literature, interpolated smoothly between bands; individual variation is large.',
+ 'VO₂max: ~10% per decade in sedentary adults after ~25–30, slightly more after 60–70 (modelled as 10% rising to 12%); ~5–6.5% per decade in masters athletes who maintain training (modelled at 60% of the sedentary rate) — Hawkins & Wiswell 2003; Pollock et al. 1997; review in Int J Environ Res Public Health 2022;19(17):11050.',
  'Biswas A et al. Sedentary time and its association with risk for disease incidence, mortality, and hospitalization in adults. Ann Intern Med 2015;162:123–132 — T2D HR 1.91, CVD mortality HR 1.18, CVD incidence HR 1.14 (longest vs shortest sedentary time; observational, heterogeneous).',
  'Ekelund U et al. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? Lancet 2016;388:1302–1310 — >8h sitting + least active: HR 1.59; ~60–75 min/day moderate activity eliminated the excess risk.',
  'WHO 2020 Guidelines on physical activity and sedentary behaviour — 150–300 min/week moderate activity; muscle-strengthening on 2+ days/week; limit sedentary time.',
@@ -593,7 +731,7 @@ const SOURCES = [
 
 <script>
 /* ============================ STATE & HELPERS ============================ */
-const S = { lang:'hi', age:30, hours:9, view:'desk', t:0, playing:false, raf:0, sel:null, picks:new Set(), openStep:null, chipsDone:false };
+const S = { lang:'hi', age:30, hours:9, hz:'career', view:'desk', t:0, playing:false, raf:0, sel:null, picks:new Set(), openStep:null, chipsDone:false };
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 const clamp = (v,a,b) => Math.min(b, Math.max(a,v));
@@ -615,14 +753,44 @@ const tone = p => p<.5 ? mix(OK,WARN,p*2) : mix(WARN,BAD,(p-.5)*2);
 /* ============================ RESEARCH MODEL ============================ */
 // Age-related decline in the cited literature starts ~30. Only the years of the
 // window that fall at age >= 30 are counted, so a 24-year-old is not shown a decline that has not begun.
+/* BUG FIX — the old model applied ONE flat decade rate to everyone aged 30+, so changing the age changed nothing
+   except the age label. Research says decline ACCELERATES with age, so the rates now rise smoothly with age
+   (linear interpolation between published decade-band midpoints) and are integrated year-by-year over the
+   10-year window that starts at the entered age.
+   Muscle (% lost per decade, untrained): ≈3–5 (30s–40s) → ≈5–8 (50s) → ≈8–12 (60s) → ≈10–15 (70s)   [NIH PMC 3–8% headline + sarcopenia reviews]
+   VO2max (% per decade, sedentary): ≈10 up to 60, drifting to ≈12 by 70 ("slightly more at older ages"); trained adults ≈ 60% of that (5–6.5%/decade). */
+const MUSCLE_ANCHORS = [ [30,3,5], [40,3,5], [55,5,8], [65,8,12], [75,10,15], [100,10,15] ];   // [age, lo, hi]
+const VO2_ANCHORS    = [ [30,10], [60,10], [70,12], [100,12] ];                                  // [age, rate]
+const VO2_TRAINED_FACTOR = 0.6;
+function interp(an, age, idx){
+  if(age<=an[0][0]) return an[0][idx];
+  for(let i=1;i<an.length;i++){ if(age<=an[i][0]){ const a=an[i-1], b=an[i], f=(age-a[0])/(b[0]-a[0]); return a[idx]+(b[idx]-a[idx])*f; } }
+  return an[an.length-1][idx];
+}
+function accrue(t, rateFn){                       // integrate a per-decade rate over t years, starting at S.age
+  if(!(t>0)) return 0;
+  const n=Math.max(1, Math.round(t/0.05)), dt=t/n; let sum=0;
+  for(let i=0;i<n;i++){ sum += rateFn(S.age + (i+0.5)*dt) * dt / 10; }
+  return sum;
+}
 function metrics(t){
-  const yo = clamp(S.age + t - 30, 0, t);
-  return { yo, mLo:R.muscleLo*yo/10, mHi:R.muscleHi*yo/10, mMid:R.muscleMid*yo/10, vo:R.vo2*yo/10, sitHrs:S.hours*365*t };
+  const yo  = accrue(t, a => a>=30 ? 10 : 0);    // years of the window that fall at age >= 30
+  const mLo = accrue(t, a => a>=30 ? interp(MUSCLE_ANCHORS,a,1) : 0);
+  const mHi = accrue(t, a => a>=30 ? interp(MUSCLE_ANCHORS,a,2) : 0);
+  const vo  = accrue(t, a => a>=30 ? interp(VO2_ANCHORS,a,1) : 0);
+  return { yo, mLo, mHi, mMid:(mLo+mHi)/2, vo, voAct:vo*VO2_TRAINED_FACTOR, sitHrs:S.hours*365*t };
 }
+/* Sitting-hours horizons. "ten" is a fixed 10-year window (depends only on hours/day) — which is exactly why it never
+   moved with age. "sofar" and "career" DO depend on age: assumes career started at 22 and retirement at 60,
+   with the same hours every day. */
+const CAREER_START = 22, RETIRE_AGE = 60;
+function sitSpan(){ return S.hz==='sofar' ? Math.max(0, S.age-CAREER_START) : (S.hz==='ten' ? 10 : Math.max(0, RETIRE_AGE-S.age)); }
+function hzRange(){ return S.hz==='sofar' ? [CAREER_START, Math.max(CAREER_START,S.age)] : (S.hz==='ten' ? [S.age, S.age+10] : [S.age, Math.max(S.age,RETIRE_AGE)]); }
 function sitMath(){
-  const hours = S.hours*365*10;
-  return { hours, yrs: hours/8760, pct: Math.round(S.hours/16*100) };   // 16 waking hours assumed
+  const span=sitSpan(), hours = S.hours*365*span;
+  return { hours, yrs: hours/8760, pct: Math.round(S.hours/16*100), span };   // 16 waking hours assumed
 }
+function hzLabel(){ return T('lbl_'+S.hz); }
 
 /* ============================ SVG: BODY FIGURE ============================ */
 function smooth(pts, closed){
@@ -695,7 +863,7 @@ class FigureView{
   update(t, mode){
     const m=metrics(t), p=clamp(t/10,0,1), desk=(mode==='desk');
     const col = desk ? tone(p) : OK;
-    const o = { gid: this.uid+'-bf', b: desk ? p : 0, mv: desk ? clamp(1-(m.mMid/100)*3.5, 0.6, 1) : 1, mcol: desk ? mix(OK, BAD, p*0.85) : OK };
+    const o = { gid: this.uid+'-bf', b: desk ? clamp(p*(0.7+0.3*clamp((S.age+t/2-25)/35,0,1)),0,1) : 0, mv: desk ? clamp(1-(m.mMid/100)*3.5, 0.6, 1) : 1, mcol: desk ? mix(OK, BAD, p*0.85) : OK };
     this.dyn.innerHTML = bodyMarkup(o);
     if(this.fe) this.fe.setAttribute('flood-color', col);
     if(this.heartFill) this.heartFill.setAttribute('fill', desk ? mix('#FF6B81', BAD, p) : '#FF6B81');
@@ -728,8 +896,10 @@ function applyStatic(){ $$('[data-i]').forEach(el => { el.innerHTML = T(el.getAt
 
 function renderMath(){
   const m=sitMath();
+  $('#m-top').textContent = T('m_top_'+S.hz);
   $('#m-hours').textContent = fmtN(m.hours);
-  $('#m-eq').innerHTML = T('m_eq',{ yrs:f1(m.yrs), pct:m.pct });
+  $('#m-eq').innerHTML = m.hours>0 ? T('m_eq',{ yrs:f1(m.yrs), pct:m.pct }) : T('hz_zero');
+  ['sofar','ten','career'].forEach(k => { const b=$('#hz-'+k); if(b){ b.classList.toggle('on', k===S.hz); b.setAttribute('aria-pressed', k===S.hz ? 'true':'false'); } });
   $('#hrs-val').textContent = S.hours;
   const h=$('#hrs'); h.style.setProperty('--p', ((S.hours-4)/10*100)+'%');
 }
@@ -754,7 +924,7 @@ function renderStage(){
 function setTone(el, cls){ el.classList.remove('ok','warn','bad'); if(cls) el.classList.add(cls); }
 
 function mus(mode, m){ return mode==='desk' ? (m.yo<=0.01 ? T('notyet') : T('mus_loss',{lo:f1(m.mLo),hi:f1(m.mHi)})) : T('mus_keep'); }
-function car(mode, m){ return m.yo<=0.01 ? T('notyet') : (mode==='desk' ? T('car_loss',{x:f1(m.vo)}) : T('car_keep',{x:f1(m.vo)})); }
+function car(mode, m){ return m.yo<=0.01 ? T('notyet') : (mode==='desk' ? T('car_loss',{x:f1(m.vo)}) : T('car_keep',{x:f1(m.voAct)})); }
 
 function updateVisuals(){
   const t=S.t, m=metrics(t), pct=t/10*100;
@@ -824,7 +994,7 @@ function renderCompare(){
   const dc = m.yo<=0.01 ? T('notyet') : '≈ −'+f1(m.vo)+'%';
   const rows=[
    [T('r_mus'), '<b>'+dm+'</b>', T('c_mus_a')],
-   [T('r_car'), '<b>'+dc+'</b> VO₂max', T('c_car_a')],
+   [T('r_car'), '<b>'+dc+'</b> VO₂max', (m.yo<=0.01 ? T('c_car_a0') : T('c_car_a',{x:f1(m.voAct)}))],
    [T('r_sit'), T('c_sit_d',{n:R.mortSitInactive}), T('c_sit_a')],
    [T('r_dia'), T('c_dia_d',{n:R.t2d}), T('c_dia_a')],
    [T('r_back'), T('c_back_d',{n:R.itPain}), T('c_back_a')]
@@ -858,7 +1028,7 @@ function renderSteps(){
   const defs=[ ['move','st_move','st_move_b'], ['lift','st_lift','st_lift_b'], ['fuel','st_fuel','st_fuel_b'] ];
   $('#steps').innerHTML = defs.map(d=>{
     const open = S.openStep===d[0], on=S.picks.has(d[0]);
-    const links = d[0]==='fuel' ? '<a class="linkbtn" href="'+TOOL1_URL+'" target="_blank" rel="noopener">'+T('tool1')+'</a><a class="linkbtn" href="'+TOOL2_URL+'" target="_blank" rel="noopener">'+T('tool2')+'</a><br>' : '';
+    const links = d[0]==='fuel' ? '<a class="linkbtn" href="'+TOOL1_URL+'" target="_blank" rel="noopener">'+T('tool1')+'</a><a class="linkbtn" href="'+TOOL2_URL+'" target="_blank" rel="noopener">'+T('tool2')+'</a><br><p class="fuel-nt">'+T('st_fuel_nt')+'</p>' : '';
     return '<div class="step'+(open?' open':'')+'" data-step="'+d[0]+'"><button class="step-h" onclick="toggleStep(\''+d[0]+'\')">'+T(d[1])+'<span class="chev">▼</span></button>'
       +'<div class="step-b">'+T(d[2])+links+'<button class="commit'+(on?' on':'')+'" onclick="togglePick(\''+d[0]+'\')">'+(on?T('committed'):T('commit'))+'</button></div></div>';
   }).join('');
@@ -881,12 +1051,14 @@ function renderReport(){
   const plan = S.picks.size ? ['move','lift','fuel'].filter(k=>S.picks.has(k)).map(k=>names[k]).join(' · ') : T('rp_plan_none');
   $('#report').innerHTML=
    '<div class="rp-top"><div class="rp-av"><img src="'+document.querySelector('.creator-avatar img').src+'" alt=""></div>'
-   +'<div class="rp-t">'+T('rp_title')+'<span>'+T('rp_sub',{a:S.age,b:S.age+10,h:S.hours})+'</span></div></div>'
-   +'<div class="rp-big">'+T('rp_big',{yrs:f1(sm.yrs)})+'</div>'
+   +'<div class="rp-t">'+T('rp_title')+'<span>'+T('rp_sub',{a:hzRange()[0],b:hzRange()[1],h:S.hours})+'</span></div></div>'
+   +'<div class="rp-big">'+T('rp_big',{yrs:f1(sm.yrs),lbl:hzLabel()})+'</div>'
    +'<div class="rp-sub">'+T('rp_hrs',{hrs:fmtN(sm.hours),pct:sm.pct})+'</div>'
    +'<div class="rp-grid"><div class="rp-box d"><h4>'+T('rp_d')+'</h4>'+T('rp_mus')+': <b>'+dm+'</b><br>'+T('rp_car')+': <b>'+dc+'</b><br>'+T('rp_t2d',{n:R.t2d})+'</div>'
    +'<div class="rp-box a"><h4>'+T('rp_a')+'</h4>'+T('rp_a_mus')+'<br>'+T('rp_a_car')+'<br>'+T('rp_a_sit')+'</div></div>'
    +'<div class="rp-plan">'+T('rp_plan')+' <b>'+plan+'</b></div>'
+   +'<div class="rp-plan">'+T('rp_fuel')+'</div>'
+   +(ACCT.filter(Boolean).length>0 ? '<div class="rp-plan">'+T('rp_acct',{n:ACCT.filter(Boolean).length})+'</div>' : '')
    +'<div class="rp-foot"><span>'+T('rp_foot')+' <b>'+reportUrl()+'</b></span><span>@_manmeet.ahluwalia_</span></div>'
    +'<div style="margin-top:8px;font-size:9px;color:#8f8173">'+T('rp_note')+'</div>';
 }
@@ -894,14 +1066,61 @@ function renderReport(){
 function renderSources(){ $('#src-list').innerHTML = SOURCES.map(s=>'<li>'+s+'</li>').join(''); }
 
 function renderAll(){
-  applyStatic(); renderMath(); renderStage(); renderDetail(); updatePlayBtn(); renderCompare(); renderChips(); renderSteps(); renderReport(); renderSources();
+  applyStatic(); renderMath(); renderAgeNote(); renderStage(); renderDetail(); updatePlayBtn(); renderCompare(); renderChips(); renderSteps(); renderAcct(); renderReport(); renderSources();
   $('#cc-word').textContent = COMMENT_WORD;
   $('#lang-hi').classList.toggle('active', S.lang==='hi'); $('#lang-en').classList.toggle('active', S.lang==='en');
   FIGS.forEach(f => f.setSelected(S.sel));
 }
 
+/* ============================ AGE NOTE ============================ */
+function renderAgeNote(){
+  const el=$('#age-note'); if(!el) return;
+  const m=metrics(10);
+  if(m.yo<=0.01){ el.innerHTML=T('an_none',{a:S.age,b:S.age+10}); return; }
+  let h=T('an_txt',{a:S.age,b:S.age+10,lo:f1(m.mLo),hi:f1(m.mHi),vo:f1(m.vo)});
+  if(m.yo<9.95) h+=T('an_part',{y:f1(m.yo)});
+  el.innerHTML=h;
+}
+
+/* ============================ ACCOUNTABILITY TRACKER ============================ */
+const ACCT_KEY='djtm_acct_v1';
+function loadAcct(){ try{ const v=JSON.parse(localStorage.getItem(ACCT_KEY)||'null'); if(Array.isArray(v) && v.length===14) return v.map(Boolean); }catch(e){} return new Array(14).fill(false); }
+function saveAcct(){ try{ localStorage.setItem(ACCT_KEY, JSON.stringify(ACCT)); }catch(e){} }
+let ACCT = loadAcct();      // [0..6] = workout D1..D7, [7..13] = protein D1..D7
+function renderAcct(){
+  const host=$('#acct'); if(!host) return;
+  const rows=[ {ico:'🏋️', lbl:T('ac_workout'), off:0, cls:'w'}, {ico:'🍗', lbl:T('ac_protein'), off:7, cls:'p'} ];
+  host.innerHTML = rows.map(r=>{
+    let b='';
+    for(let i=0;i<7;i++){ const idx=r.off+i, on=ACCT[idx];
+      b+='<button class="ac-day '+r.cls+(on?' on':'')+'" aria-pressed="'+(on?'true':'false')+'" aria-label="'+r.lbl+' D'+(i+1)+'" onclick="toggleAcct('+idx+')">'+(on?'✓':'D'+(i+1))+'</button>'; }
+    return '<div class="ac-row"><div class="ac-lbl">'+r.ico+' '+r.lbl+'</div><div class="ac-days">'+b+'</div></div>';
+  }).join('');
+  const n=ACCT.filter(Boolean).length;
+  $('#ac-count').innerHTML='<span>'+T('ac_count',{n:n})+'</span><button class="ac-reset" onclick="resetAcct()">'+T('ac_reset')+'</button>';
+}
+function toggleAcct(i){
+  ACCT[i]=!ACCT[i]; saveAcct(); renderAcct(); renderReport();
+  if(ACCT.every(Boolean)) showToast(T('ac_done'));
+}
+function resetAcct(){ ACCT=new Array(14).fill(false); saveAcct(); renderAcct(); renderReport(); }
+
 /* ============================ INTERACTION ============================ */
 function setLang(l){ S.lang=l; renderAll(); }
+const NT_CODE = 'MSA15';
+function copyCode(){
+  const done=()=>showToast(T('code_copied'));
+  if(navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext){ navigator.clipboard.writeText(NT_CODE).then(done).catch(()=>legacyCopyCode()); return; }
+  legacyCopyCode();
+}
+function legacyCopyCode(){
+  const ta=document.createElement('textarea'); ta.value=NT_CODE; ta.style.position='fixed'; ta.style.left='-9999px';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  let ok=false; try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
+  document.body.removeChild(ta);
+  if(ok) showToast(T('code_copied')); else window.prompt(T('copy_prompt'), NT_CODE);
+}
+function setHz(k){ S.hz=k; renderMath(); renderReport(); }
 function setView(v){
   S.view=v;
   ['desk','active','both'].forEach(k => $('#v-'+k).classList.toggle('on', k===v));
@@ -936,8 +1155,8 @@ function wireInputs(){
   $('#yr').addEventListener('input', e => { if(S.playing) pause(); setT(parseFloat(e.target.value), true); });
   $('#hrs').addEventListener('input', e => { S.hours=parseInt(e.target.value,10)||9; renderMath(); renderReport(); updateVisuals(); });
   const ageEl=$('#age');
-  ageEl.addEventListener('input', () => { const v=parseInt(ageEl.value,10); if(v>=18 && v<=60){ S.age=v; renderCompare(); renderReport(); updateVisuals(); } });
-  ageEl.addEventListener('change', () => { let v=parseInt(ageEl.value,10); if(isNaN(v)) v=30; v=clamp(v,18,60); ageEl.value=v; S.age=v; renderCompare(); renderReport(); updateVisuals(); });
+  ageEl.addEventListener('input', () => { const v=parseInt(ageEl.value,10); if(v>=18 && v<=60){ S.age=v; renderMath(); renderAgeNote(); renderCompare(); renderReport(); updateVisuals(); } });
+  ageEl.addEventListener('change', () => { let v=parseInt(ageEl.value,10); if(isNaN(v)) v=30; v=clamp(v,18,60); ageEl.value=v; S.age=v; renderMath(); renderAgeNote(); renderCompare(); renderReport(); updateVisuals(); });
 }
 
 /* ============================ SHARE / SAVE ============================ */
@@ -945,7 +1164,7 @@ let toastTimer=0;
 function showToast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2600); }
 function shareResult(){
   const sm=sitMath();
-  const text=T('share_text',{yrs:f1(sm.yrs)});
+  const text=T('share_text',{yrs:f1(sm.yrs),lbl:hzLabel()});
   const url=(location.protocol==='file:') ? IG_URL : location.href;
   if(navigator.share){
     navigator.share({ title:'Desk Job Ke 10 Saal — by Manmeet Ahluwalia', text:text, url:url })
